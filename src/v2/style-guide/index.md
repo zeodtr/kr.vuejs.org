@@ -4,13 +4,13 @@ type: style-guide
 
 # Style Guide <sup class="beta">beta</sup>
 
-This is the official style guide for Vue-specific code. If you use Vue in a project, it's a great reference to avoid errors, bikeshedding, and anti-patterns. However, we don't believe that any style guide is ideal for all teams or projects, so mindful deviations are encouraged based on past experience, the surrounding tech stack, and personal values.
+이 문서는 Vue스러운 코드를 위한 공식 스타일 가이드 입니다. 만약 프로젝트에서 Vue를 사용하고 있다면, 이 문서는 에러, 안티패턴 그리고 야크 털 깎기와 같은 불필요한 작업을 회피하기 위한 좋은 참고가 될 것입니다. 그러나 어떠한 스타일 가이드가 모든 팀이나 프로젝트에 이상적으로 들어맞는다고 할 수는 없으므로 개발자의 경험, 기술 스택, 개인적 성향에 따라 주의깊게 적용할 것을 장려합니다.
 
-For the most part, we also avoid suggestions about JavaScript or HTML in general. We don't mind whether you use semicolons or trailing commas. We don't mind whether your HTML uses single-quotes or double-quotes for attribute values. Some exceptions will exist however, where we've found that a particular pattern is helpful in the context of Vue.
+대부분의 경우 우리는 HTML이나 JavaScript에 대한 제한은 하지 않습니다. 예를 들어, 개발자가 행의 마감표시로 세미콜론을 사용하던 쉼표를 사용하던, HTML의 attribute에 큰따옴표를 사용하던 작은따옴표를 사용하던 우리는 신경쓰지 않습니다. 그러나 물론 몇 가지의 예외는 존재합니다. 우리는 몇 가지의 패턴이 Vue의 context에 유용하다는 것을 발견했습니다.
 
 > **Soon, we'll also provide tips for enforcement.** Sometimes you'll simply have to be disciplined, but wherever possible, we'll try to show you how to use ESLint and other automated processes to make enforcement simpler.
 
-Finally, we've split rules into four categories:
+최종적으로 우리는 이 규칙들을 4개의 카테고리로 분류했습니다:
 
 
 
@@ -18,25 +18,27 @@ Finally, we've split rules into four categories:
 
 ### Priority A: Essential
 
-These rules help prevent errors, so learn and abide by them at all costs. Exceptions may exist, but should be very rare and only be made by those with expert knowledge of both JavaScript and Vue.
+이 규칙들은 에러를 예방 하는 데 도움을 주기 때문에 모든 비용을 들여서라도 배우고 준수해야 합니다. 예외가 있을 수는 있으나 매우 드물고, 또한 JavaScript와 Vue에 대해 깊은 지식을 가지고 있는 전문가가 아니라면 예외를 만들지 않는 것이 좋습니다.
 
 ### Priority B: Strongly Recommended
 
+이 규칙들을 준수하게되면 대부분의 프로젝트에서 가독성을 크게 향상 시킵니다. 규칙을 위반하더라도 에러가 나진 않겠지만 [conferences](https://github.com/vuejs/roadmap#events)에서 다른 개발자들의 따가운 눈총을 받을 수도 있습니다.
 These rules have been found to vastly improve readability in most projects. If you violate them, your code will still run, but other developers may give you the evil eye [at conferences](https://github.com/vuejs/roadmap#events).
 
 [![Fry from Futurama glaring](https://i.imgur.com/PcOnLxn.jpg)](http://futurama.wikia.com/wiki/Template:FOX_Image)
 
 ### Priority C: Recommended
 
-Where multiple, equally good options exist, an arbitrary choice can be made to ensure consistency. In these rules, we describe each acceptable option and suggest a default choice. That means you can feel free to make a different choice in your own codebase, as long as you're consistent and have a good reason. Please do have a good reason though! By adapting to the community standard, you will:
+여러가지 좋은 옵션들이 존재한다면, 코드의 일관성을 보장하기 위해 임의의 선택을 할 수 있습니다. 이 규칙들에서 우리는 몇개의 선택 가능한 옵션들을 설명하고 기본 선택사항을 제안합니다. 즉 일관성을 지키기 위함이나 혹은 다른 좋은 이유가 있는 한 자유롭게 선택해서 사용하면 된다는 뜻 입니다.
+Please do have a good reason though! 커뮤니티 표준에 적응하게 되면 다음과 같은 일을 하게 됩니다.
 
-1. train your brain to more easily parse most of the community code you encounter
-2. be able to copy and paste most community code examples without modification
-2. often find new hires are already accustomed to your preferred coding style, at least in regards to Vue
+1. 커뮤니티에서 보이는 코드들을 좀 더 쉽게 이해하기 위해 두뇌를 훈련시키기
+2. 커뮤니티에서 수정 없이 대부분의 코드를 복사, 붙혀넣기로 사용할 수 있습니다
+3. often find new hires are already accustomed to your preferred coding style, at least in regards to Vue
 
 ### Priority D: Use with Caution
 
-Some features of Vue exist to accommodate rare edge cases or smoother migrations from a legacy code base. When overused however, they can make your code more difficult to maintain or even become a source of bugs. These rules shine a light on potentially risky features, describing when and why they should be avoided.
+Vue의 일부 기능들은 희귀한 엣지 케이스들과 기존 코드에서의 수월한 마이그레이션을 위해 존재합니다. 그러나 과용한다면 그 기능들은 코드 유지보수를 어렵게 만들거나 버그의 원인이 될 수 있습니다. 이 규칙들은 잠재적인 위험요소들을 좀 더 명확히 보이게 하고 언제 그리고 왜 이것들을 피해야 하는 지 설명합니다.
 
 [![goto from xkcd.com](https://imgs.xkcd.com/comics/goto.png)](https://xkcd.com/292/)
 
@@ -48,9 +50,9 @@ Some features of Vue exist to accommodate rare edge cases or smoother migrations
 
 ### Multi-word component names <sup data-p="a">essential</sup>
 
-**Component names should always be multi-word, except for root `App` components.**
+**컴포넌트 이름은 항상 합성어여야 합니다. 단 root `App`컴포넌트는 제외입니다.**
 
-This [prevents conflicts](http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name) with existing and future HTML elements, since all HTML elements are a single word.
+이렇게 작성하면 모든 HTML엘리먼트는 단일 단어이므로 기존 요소와 향후 추가될 요소와의 [충돌을 예방할 수 있습니다](http://w3c.github.io/webcomponents/spec/custom/#valid-custom-element-name).
 
 {% raw %}<div class="style-example example-bad">{% endraw %}
 #### Bad
@@ -90,18 +92,18 @@ export default {
 
 ### Component data <sup data-p="a">essential</sup>
 
-**Component `data` must be a function.**
+**컴포넌트의 `data`프로퍼티는 반드시 함수여야 합니다.**
 
-When using the `data` property on a component (i.e. anywhere except on `new Vue`), the value must be a function that returns an object.
+컴포넌트에서 `data`프로퍼티를 사용할 때(i.e. `new Vue`를 사용할 때는 제외), 값은 반드시 object를 반환하는 함수여야 합니다.
 
 {% raw %}
 <details>
 <summary>
-  <h4>Detailed Explanation</h4>
+  <h4>자세한 설명</h4>
 </summary>
 {% endraw %}
 
-When the value of `data` is an object, it's shared across all instances of a component. Imagine, for example, a `TodoList` component with this data:
+`data`의 값이 object자료형일때, 이 값은 컴포넌트 내부의 모든 객체에 공유됩니다. 아래와 같은 data를 가지고 있는 `TodoList`컴포넌트를 생각해보세요:
 
 ``` js
 data: {
@@ -110,9 +112,9 @@ data: {
 }
 ```
 
-We might want to reuse this component, allowing users to maintain multiple lists (e.g. for shopping, wishlists, daily chores, etc). There's a problem though. Since every instance of the component references the same data object, changing the title of one list will also change the title of every other list. The same is true for adding/editing/deleting a todo.
+우리는 컴포넌트를 재사용하여 사용자가 여러 리스트들을 유지할 수 있도록 할 수 있습니다(e.g. 쇼핑리스트, 위시리스트, 잡일 등등). 하지만 문제가 하나 있습니다. 컴포넌트 내부의 모든 객체가 같은 data객체를 참조하기 때문에 한 리스트의 제목을 변경하면 다른 리스트들의 제목도 변경되어 버립니다. 이 문제는 추가하기/수정하기/삭제하기 같은 기능에서도 마찬가지로 발생합니다.
 
-Instead, we want each component instance to only manage its own data. For that to happen, each instance must generate a unique data object. In JavaScript, this can be accomplished by returning the object in a function:
+우리는 각 컴포넌트 내부의 객체가 각각 고유한 data객체를 참조하도록 만들고 싶습니다. 이 현상을 해결하기 위해선 각 객체는 고유한 data객체를 생성해야합니다. JavaScript에서, 함수는 객체를 반환함으로서 이를 수행할 수 있습니다.
 
 ``` js
 data: function () {
@@ -168,9 +170,8 @@ export default {
 ```
 
 ``` js
-// It's OK to use an object directly in a root
-// Vue instance, since only a single instance
-// will ever exist.
+// Root에서 객체를 바로 사용하는 것은 괜찮습니다.
+// Vue인스턴스는 오직 하나만 존재하기 때문입니다.
 new Vue({
   data: {
     foo: 'bar'
