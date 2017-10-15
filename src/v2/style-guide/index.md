@@ -23,14 +23,13 @@ type: style-guide
 ### Priority B: Strongly Recommended
 
 이 규칙들을 준수하게되면 대부분의 프로젝트에서 가독성을 크게 향상 시킵니다. 규칙을 위반하더라도 에러가 나진 않겠지만 [conferences](https://github.com/vuejs/roadmap#events)에서 다른 개발자들의 따가운 눈총을 받을 수도 있습니다.
-These rules have been found to vastly improve readability in most projects. If you violate them, your code will still run, but other developers may give you the evil eye [at conferences](https://github.com/vuejs/roadmap#events).
 
 [![Fry from Futurama glaring](https://i.imgur.com/PcOnLxn.jpg)](http://futurama.wikia.com/wiki/Template:FOX_Image)
 
 ### Priority C: Recommended
 
 여러가지 좋은 옵션들이 존재한다면, 코드의 일관성을 보장하기 위해 임의의 선택을 할 수 있습니다. 이 규칙들에서 우리는 몇개의 선택 가능한 옵션들을 설명하고 기본 선택사항을 제안합니다. 즉 일관성을 지키기 위함이나 혹은 다른 좋은 이유가 있는 한 자유롭게 선택해서 사용하면 된다는 뜻 입니다.
-Please do have a good reason though! 커뮤니티 표준에 적응하게 되면 다음과 같은 일을 하게 됩니다.
+Please do have a good reason though! 커뮤니티 표준에 적응하게 되면 다음과 같은 일을 할 수 있게 됩니다.
 
 1. 커뮤니티에서 보이는 코드들을 좀 더 쉽게 이해하기 위해 두뇌를 훈련시키기
 2. 커뮤니티에서 수정 없이 대부분의 코드를 복사, 붙혀넣기로 사용할 수 있습니다
@@ -90,7 +89,7 @@ export default {
 
 
 
-### Component data <sup data-p="a">essential</sup>
+### 컴포넌트 데이터 <sup data-p="a">essential</sup>
 
 **컴포넌트의 `data`프로퍼티는 반드시 함수여야 합니다.**
 
@@ -182,23 +181,23 @@ new Vue({
 
 
 
-### Prop definitions <sup data-p="a">essential</sup>
+### Prop 정의 <sup data-p="a">essential</sup>
 
-**Prop definitions should be as detailed as possible.**
+**Prop 프로퍼티는 되도록이면 자세하게 정의되어야 합니다.**
 
-In committed code, prop definitions should always be as detailed as possible, specifying at least type(s).
+커밋되어진 코드 상에서, Prop 프로퍼티는 자세하게 정의되어 있어야 합니다. 적어도 타입이라도 말이죠.
 
 {% raw %}
 <details>
 <summary>
-  <h4>Detailed Explanation</h4>
+  <h4>자세한 설명</h4>
 </summary>
 {% endraw %}
 
-Detailed [prop definitions](https://vuejs.org/v2/guide/components.html#Prop-Validation) have two advantages:
+자세하게 정의되어진 [Prop의 설명](https://vuejs.org/v2/guide/components.html#Prop-Validation)은 다음 2가지의 이점을 가집니다.
 
-- They document the API of the component, so that it's easy to see how the component is meant to be used.
-- In development, Vue will warn you if a component is ever provided incorrectly formatted props, helping you catch potential sources of error.
+- 컴포넌트의 API를 문서화함으로서, 컴포넌트의 사용 방법을 쉽게 알 수 있습니다.
+- 개발 과정에서, Vue는 잘못 지정된 형식의 Prop을 입력받으면 경고를 노출하여 에러의 가능성을 발견하는 것을 도와줄 것 입니다.
 
 {% raw %}</details>{% endraw %}
 
@@ -206,7 +205,7 @@ Detailed [prop definitions](https://vuejs.org/v2/guide/components.html#Prop-Vali
 #### Bad
 
 ``` js
-// This is only OK when prototyping
+// 이러한 방식은 프로토타이핑 과정에서만 허용됩니다
 props: ['status']
 ```
 {% raw %}</div>{% endraw %}
@@ -221,7 +220,7 @@ props: {
 ```
 
 ``` js
-// Even better!
+// 훨씬 좋군요!
 props: {
   status: {
     type: String,
@@ -241,9 +240,9 @@ props: {
 
 
 
-### Keyed `v-for` <sup data-p="a">essential</sup>
+### `v-for`에 키 지정 <sup data-p="a">essential</sup>
 
-**Always use `key` with `v-for`.**
+**`v-for`에는 항상 `key`가 지정되어야 합니다.**
 
 `key` with `v-for` is _always_ required on components, in order to maintain internal component state down the subtree. Even for elements though, it's a good practice to maintain predictable behavior, such as [object constancy](https://bost.ocks.org/mike/constancy/) in animations.
 
